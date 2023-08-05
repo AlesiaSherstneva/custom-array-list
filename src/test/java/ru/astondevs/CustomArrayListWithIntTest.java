@@ -62,7 +62,7 @@ class CustomArrayListWithIntTest {
                 String.format("Index %d out of bounds for length %d", wrongIndex, intList.size()));
 
         // given
-        int negativeIndex = random.nextInt(100) * (-1);
+        int negativeIndex = (random.nextInt(100) + 1) * (-1);
         // when, then
         assertThrows(IllegalArgumentException.class, () -> intList.add(negativeIndex, newElement),
                 "Index should be a positive number or zero");
